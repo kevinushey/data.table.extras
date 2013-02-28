@@ -1,0 +1,13 @@
+Package: data.table.extras
+Type: Package
+Title: Add-on functions to augment the data.table package.
+Version: 1.0
+Date: 2013-02-28
+Author: Kevin Ushey
+Maintainer: Kevin Ushey <kevinushey@gmail.com>
+Description: These functions extend the functionality of data.table in small
+    but useful ways.
+License: GPL (<= 2)
+Collate:
+    'data.table.extras.R'
+    'del.R'
