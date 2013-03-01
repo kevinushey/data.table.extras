@@ -19,22 +19,6 @@
   This function swaps elements in a vector. See examples
   for usage.
 }
-\examples{
-x <- c(1, 2, 2, 3)
-from <- c(1, 2)
-to <- c(10, 20)
-swap( x, from, to )
-
-## alternatively, we can submit a named character vector
-## we translate from value to name. note that this forces
-## a conversion to character
-names(from) <- to
-swap( x, from )
-
-## NAs are handled sensibly. Types are coerced as needed.
-x <- c(1, NA, 2, 2, 3)
-swap(x, c(1, 2), c("a", "b") )
-}
 \seealso{
   \code{\link{match}}
 }

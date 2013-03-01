@@ -1,4 +1,3 @@
 export(del)
 export(keep)
-export(swap)
 S3method(str,data.table)
