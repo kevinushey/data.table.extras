@@ -24,12 +24,12 @@
 \examples{
 local({
 DT <- data.table( x=1:5, y=letters[1:5], z=factor( letters[1:5] ) )
-DT2 <- DT
+DT2 <- copy(DT)
 str(DT)
 keep(DT2, x)
 str(DT2)
-vars_to_remove <- c("y", "q")
-keep(DT, list=vars_to_remove)
+vars_to_keep <- c("y", "q")
+keep(DT, list=vars_to_keep)
 str(DT)
 })
 }

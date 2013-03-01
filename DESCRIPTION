@@ -8,7 +8,11 @@ Maintainer: Kevin Ushey <kevinushey@gmail.com>
 Description: These functions extend the functionality of data.table in small
     but useful ways.
 License: GPL (<= 2)
+Depends:
+    data.table
 Collate:
     'data.table.extras.R'
     'del.R'
     'keep.R'
+    'str.data.table.R'
+    'swap.R'
