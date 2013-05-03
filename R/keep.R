@@ -20,7 +20,7 @@
 #' })
 keep <- function(DT, ..., list=NULL) {
   
-  .delete.col <- function(arg) {
+  .delete.col <- function(DT, arg) {
     tryCatch( set(DT, NULL, as.character(arg), NULL),
               error=function(e) {
                 message("Warning: ", arg, " is not a column name in DT")
@@ -32,14 +32,16 @@ keep <- function(DT, ..., list=NULL) {
     args <- as.character( match.call(expand.dots=FALSE)$`...` )
     remove <- names(DT)[ !(names(DT) %in% args) ]
     for( arg in remove ) {
-      .delete.col(arg)
+      .delete.col(DT, arg)
     }
+    setcolorder(DT, args)
     
   } else {
     remove <- names(DT)[ !(names(DT) %in% unlist(list)) ]
     for( arg in remove ) {
-      .delete.col(arg)
+      .delete.col(DT, arg)
     }
+    setcolorder(DT, unlist(list))
   }
   
 }
