@@ -7,7 +7,7 @@ Author: Kevin Ushey
 Maintainer: Kevin Ushey <kevinushey@gmail.com>
 Description: These functions extend the functionality of data.table in small
     but useful ways.
-License: GPL (<= 2)
+License: GPL (>= 2)
 Depends:
     data.table
 Collate:
@@ -16,3 +16,4 @@ Collate:
     'keep.R'
     'str.data.table.R'
     'swap.R'
+    'group_subset.R'
