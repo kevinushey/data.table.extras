@@ -1,4 +1,4 @@
+S3method(str,data.table)
 export(del)
 export(group_subset)
 export(keep)
-S3method(str,data.table)
