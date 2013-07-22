@@ -1,8 +1,8 @@
 #' Structure of a data.table
 #' 
 #' You tried calling \code{str} on a big \code{data.table}? Say goodbye to
-#' your RAM! At least, what's what you'd be saying before this function.
-#' This implements \code{str} method that handles \code{data.table}s with
+#' your RAM! At least, that's what you'd be saying before this function.
+#' This implements a \code{str} method that handles \code{data.table}s with
 #' atomic elements a bit better.
 #' 
 #' @method str data.table
