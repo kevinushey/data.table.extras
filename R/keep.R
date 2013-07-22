@@ -33,6 +33,11 @@ keep <- function(DT, ..., list=NULL) {
     args <- unlist(list)
   }
   
+  missing <- args[ !(args %in% names(DT)) ]
+  for( arg in missing ) {
+    warning("Variable '", arg, "' does not exist in the data.table passed")
+  }
+  
   remove <- names(DT)[ !(names(DT) %in% args) ]
   for( arg in remove ) {
     .delete.col(DT, arg)
