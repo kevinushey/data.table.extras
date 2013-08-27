@@ -17,3 +17,4 @@ Collate:
     'str.data.table.R'
     'swap.R'
     'group_subset.R'
+    'rbindlist.R'
