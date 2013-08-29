@@ -1,7 +1,7 @@
 ##' rbindlist with names
 ##' 
 ##' This function implements \code{rbindlist} but adds an optional argument,
-##' \code{keep.names}, which allows us to keep the names of each
+##' \code{names}, which allows us to keep the names of each
 ##' sub-list which we \code{rbindlist}-ify.
 ##' 
 ##' @param l A list of \code{data.frame}s, \code{data.table}s or 

@@ -1,8 +1,8 @@
-\name{group_subset}
-\alias{group_subset}
-\title{Row Subset by Group}
+\name{collapse}
+\alias{collapse}
+\title{Collapse a data.table by Group}
 \usage{
-  group_subset(DT, i = 1, by)
+  collapse(DT, i = 1, by)
 }
 \arguments{
   \item{DT}{A \code{data.table}.}
@@ -34,6 +34,6 @@ DT <- data.table(
 )
 
 DT[, mean_y := mean(y), by=x]
-group_subset(DT, 1, x)
+collapse(DT, 1, by=list(x))
 }
 

@@ -1,5 +1,5 @@
 S3method(str,data.table)
+export(collapse)
 export(del)
-export(group_subset)
 export(keep)
 export(rbindlistn)

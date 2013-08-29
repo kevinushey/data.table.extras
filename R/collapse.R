@@ -1,4 +1,4 @@
-#' Row Subset by Group
+#' Collapse a data.table by Group
 #' 
 #' For each \code{data.table} subset (as subset by the \code{by} argument),
 #' return the rows at indices \code{i}.
@@ -23,8 +23,8 @@
 #' )
 #' 
 #' DT[, mean_y := mean(y), by=x]
-#' group_subset(DT, 1, x)
-group_subset <- function(DT, i=1, by) {
+#' collapse(DT, 1, by=list(x))
+collapse <- function(DT, i=1, by) {
   call <- match.call()
   return( DT[ DT[, .I[i], by=eval( call$by )]$V1 ] )
 }

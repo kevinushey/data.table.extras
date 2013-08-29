@@ -17,8 +17,7 @@
 }
 \description{
   This function implements \code{rbindlist} but adds an
-  optional argument, \code{keep.names}, which allows us to
-  keep the names of each sub-list which we
-  \code{rbindlist}-ify.
+  optional argument, \code{names}, which allows us to keep
+  the names of each sub-list which we \code{rbindlist}-ify.
 }
 
