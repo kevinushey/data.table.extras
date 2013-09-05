@@ -8,7 +8,7 @@
 #' 
 #' @param DT A \code{data.table}.
 #' @param i Indices at which to subset each sub-\code{data.table}.
-#' @param by Variable(s) to subset over.
+#' @param by Variable(s) to subset over, as a \code{list} of symbols.
 #' @export
 #' @examples
 #' DT <- data.table(

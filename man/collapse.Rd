@@ -10,7 +10,8 @@
   \item{i}{Indices at which to subset each
   sub-\code{data.table}.}
 
-  \item{by}{Variable(s) to subset over.}
+  \item{by}{Variable(s) to subset over, as a \code{list} of
+  symbols.}
 }
 \description{
   For each \code{data.table} subset (as subset by the
