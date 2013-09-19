@@ -4,7 +4,6 @@
 ##' \code{names}, which allows us to keep the names of each
 ##' sub-list which we \code{rbindlist}-ify.
 ##' 
-##' 
 ##' @param l A list of \code{data.frame}s, \code{data.table}s or 
 ##'   \code{data.frame} shaped \code{list}s.
 ##' @param names If \code{names} is:
@@ -19,14 +18,14 @@
 rbindlistn <- function(l, names=FALSE) {
   
   if (identical(names, FALSE)) {
-    return( data.table::rbindlist(l) )
-  }
+    return(rbindlist(l))
+  }  
   
   if (identical(names, TRUE)) {
     names <- ".Names"
   }
   
-  output <- data.table::rbindlist(l)
+  output <- rbindlist(l)
   nm <- names(l)
   if (is.null(nm)) {
     warning("The 'names' attribute of your list is NULL")
@@ -37,6 +36,6 @@ rbindlistn <- function(l, names=FALSE) {
     warning("Some elements in your list are unnamed")
     nm[nm == ''] <- paste0("V", 1:length(l))[nm == '']
   }
-  output[, `:=`( eval(names), rep(nm, sapply(l, nrow)))]
+  output[, eval(names) := rep(nm, sapply(l, nrow, USE.NAMES=FALSE))]
   return(output)
 }
