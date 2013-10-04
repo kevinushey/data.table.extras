@@ -24,5 +24,7 @@
 \examples{
 dfs <- list( a=data.frame(x=1, y=2, z=3), b=data.frame(x=4, y=5, z=6) )
 rbindlistn(dfs)
+lists <- list( a=list(x=1, y=2, z=3), b=list(x=4, y=5, z=6) )
+rbindlist(lists)
 }
 

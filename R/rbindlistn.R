@@ -18,6 +18,8 @@
 ##' @examples
 ##' dfs <- list( a=data.frame(x=1, y=2, z=3), b=data.frame(x=4, y=5, z=6) )
 ##' rbindlistn(dfs)
+##' lists <- list( a=list(x=1, y=2, z=3), b=list(x=4, y=5, z=6) )
+##' rbindlistn(lists)
 rbindlistn <- function(l, names=TRUE) {
   
   if (identical(names, FALSE)) {
@@ -39,6 +41,6 @@ rbindlistn <- function(l, names=TRUE) {
     warning("Some elements in your list are unnamed")
     nm[nm == ''] <- paste0("V", 1:length(l))[nm == '']
   }
-  output[, eval(names) := rep(nm, sapply(l, nrow, USE.NAMES=FALSE))]
+  output[, eval(names) := rep(nm, sapply(l, function(x) length(x[[1]]), USE.NAMES=FALSE))]
   return(output)
 }
