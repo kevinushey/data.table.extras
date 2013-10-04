@@ -2,7 +2,7 @@
 \alias{rbindlistn}
 \title{rbindlist with names}
 \usage{
-  rbindlistn(l, names = FALSE)
+  rbindlistn(l, names = TRUE)
 }
 \arguments{
   \item{l}{A list of \code{data.frame}s, \code{data.table}s
@@ -20,5 +20,9 @@
   This function implements \code{rbindlist} but adds an
   optional argument, \code{names}, which allows us to keep
   the names of each sub-list which we \code{rbindlist}-ify.
+}
+\examples{
+dfs <- list( a=data.frame(x=1, y=2, z=3), b=data.frame(x=4, y=5, z=6) )
+rbindlistn(dfs)
 }
 

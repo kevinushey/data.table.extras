@@ -16,5 +16,5 @@ Collate:
     'keep.R'
     'str.data.table.R'
     'swap.R'
-    'rbindlist.R'
     'collapse.R'
+    'rbindlistn.R'
