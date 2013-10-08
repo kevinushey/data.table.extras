@@ -2,7 +2,7 @@
 \alias{rbindlistn}
 \title{rbindlist with names}
 \usage{
-  rbindlistn(l, names = TRUE)
+  rbindlistn(l, names = ".Names")
 }
 \arguments{
   \item{l}{A list of \code{data.frame}s, \code{data.table}s
@@ -25,6 +25,6 @@
 dfs <- list( a=data.frame(x=1, y=2, z=3), b=data.frame(x=4, y=5, z=6) )
 rbindlistn(dfs)
 lists <- list( a=list(x=1, y=2, z=3), b=list(x=4, y=5, z=6) )
-rbindlist(lists)
+rbindlistn(lists)
 }
 
