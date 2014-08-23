@@ -10,11 +10,3 @@ Description: These functions extend the functionality of data.table in small
 License: GPL (>= 2)
 Depends:
     data.table
-Collate:
-    'data.table.extras.R'
-    'del.R'
-    'keep.R'
-    'str.data.table.R'
-    'swap.R'
-    'collapse.R'
-    'rbindlistn.R'

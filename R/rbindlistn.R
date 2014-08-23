@@ -20,7 +20,10 @@
 ##' rbindlistn(dfs)
 ##' lists <- list( a=list(x=1, y=2, z=3), b=list(x=4, y=5, z=6) )
 ##' rbindlistn(lists)
-rbindlistn <- function(l, names=".Names") {
+##' df1 <- data.frame(x = 1, y = 2)
+##' df2 <- data.frame(x = 3, y = 4)
+##' rbindlistn(list(df1, df2))
+rbindlistn <- function(l, names = ".Names") {
   
   if (identical(names, FALSE)) {
     return(rbindlist(l))
@@ -32,6 +35,29 @@ rbindlistn <- function(l, names=".Names") {
   
   output <- rbindlist(l)
   nm <- names(l)
+  
+  ## Try to guess the names from the call, if possible
+  if (is.null(nm)) {
+    
+    ## Examine the call to get names, if possible
+    call <- match.call()
+    listCall <- call[["l"]]
+    if (listCall[[1]] == "list") {
+      
+      for (i in 2:length(listCall)) {
+        if (!is.symbol(listCall[[i]])) {
+          break
+        }
+      }
+      
+      nm <- character(length(listCall) - 1)
+      for (i in 2:length(listCall)) {
+        nm[[i - 1]] <- as.character(listCall[[i]])
+      }
+    }
+  }
+  
+  ## Fallback if still NULL
   if (is.null(nm)) {
     warning("The 'names' attribute of your list is NULL")
     nm <- paste0("V", 1:length(l))
